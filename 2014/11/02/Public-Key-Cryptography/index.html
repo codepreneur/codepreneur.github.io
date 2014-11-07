@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<title>Algoholic&#39;s Blog</title>
+	<title>Public Key Cryptography | Algoholic&#39;s Blog</title>
 	<meta name="description" content="I live in the future and code what's missing" />
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="MobileOptimized" content="320" />
@@ -186,7 +186,7 @@
 										
 										<div id="nav-container">
 											<div class="post-navbar" style="line-height: 63px;display:none">
-												<li id="navbar-title"><a href="#">undefined</a></li>
+												<li id="navbar-title"><a href="#">Public Key Cryptography</a></li>
 												<li id="navbar-toc" style="border-left: none">
 													<a style="padding-right: 15px">
 														<span id="toc-content" >Introduction</span><i class="fa fa-chevron-down" ></i>
@@ -205,74 +205,79 @@
 
 
 <!-- -->
-<!--<body class="home-template">-->
+<!--<body class="post-template">-->
 <!---->
 
+
 <main class="content" role="main">
-
-	
-	<article class="post">
-
-		<header class="post-header">
+	<article class="post" >
+		<span class="post-meta">
 			<div class="tag-tile">
 				
-				<span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
 			</div>
-			<h1 class="post-title"><a data-pjax href="/2014/11/02/Public-Key-Cryptography/">Public Key Cryptography</a>
-			</h1>
+			<h1 class="post-title" style="margin: 14px 0;color:#50585D">Public Key Cryptography</h1>
 
 			<div class="post-meta">
 				Post on<span class="fa fa-clock-o"></span>
 				<time datetime="2014-11-02T02:07:17.000Z"
 					itemprop="datePublished">Nov 2 2014</time>
 				</div>
-			</header>
-			<section class="post-excerpt">
-				<p>
-					
-					How Public Key Cryptography works
-The simplest possible example of cryptography would look something like this:
-if you have a string, lets say ‘apple’ and you are using 2 as a ‘key’ an encrypted string of ‘apple’ would l
-					
-				</p>
-				
-				</section>
-			</article>
-			
-	<article class="post">
+			</span>
 
-		<header class="post-header">
-			<div class="tag-tile">
-				
-				<span class="fa fa-bookmark" style="float:right;color:#f39c12"></span>
-			</div>
-			<h1 class="post-title"><a data-pjax href="/2014/11/01/hello-world/">Hello World</a>
-			</h1>
+			<section class="post-content">
+				<h1 id="How_Public_Key_Cryptography_works">How Public Key Cryptography works</h1>
+<p>The simplest possible example of cryptography would look something like this:</p>
+<p>if you have a string, lets say ‘apple’ and you are using 2 as a ‘key’ an encrypted string of ‘apple’ would look like this: ‘crrng’. That is, all letters are moved/shifted by 2 positions in the alphabet. Now, obviously real encryption is a lot more complex than that, but the principle itself is simple.</p>
+<p>Let’s say for a moment that you are a customer of Barclays and you are trying to login to your online banking interface. The whole process would be something like this:</p>
+<ol>
+<li><p>Barclays generates a set of two keys: public and private.<br>Public key is public. That is, everyone can see it.<br>Private key is never shared. Barclays is the only company that knows it.</p>
+</li>
+<li><p>Your browser requests the public key.</p>
+</li>
+<li>Your browser generates a random encryption key.</li>
+<li>Your browser encrypts all communication using this new encryption key.</li>
+<li>Your browser encrypts the encryption key (#3) itself with Barclays public key.</li>
+<li>And sends all of that to Barclays over an insecure network.</li>
+<li>Barclays uses its private key to decrypt the encryption key.</li>
+<li>Finally, Barclays uses that encryption key to decrypt the message.</li>
+</ol>
+<p>Private and public keys make up one key and can’t be generated at different times. I.e. they have to be generated together. And keys that are generated are symmetric, because that’s less computationally expensive.</p>
+<p>Symmetric means it can be used for both decryption and encryption.</p>
 
-			<div class="post-meta">
-				Post on<span class="fa fa-clock-o"></span>
-				<time datetime="2014-11-01T15:58:49.000Z"
-					itemprop="datePublished">Nov 1 2014</time>
-				</div>
-			</header>
-			<section class="post-excerpt">
-				<p>
-					
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in trobuleshooting or you can ask me on GitHub.
-Quick Start
-Create a new 
-					
-				</p>
+			</section>
+			<hr/>
+			<nav class="pagination" style="width:auto" role="pagination">
 				
-				</section>
-			</article>
-			
-			<nav class="pagination" role="pagination">
+				<a style="cursor:default" class="newer-posts" href="#">This is the First Post</a>
 				
-				<span class="page-number">Page 1 of 1</span>
+				<a class="share-button" data-original-title title>Share this Post</a>
+				
+				<a data-pjax class="older-posts" href="/2014/11/01/hello-world/">Next Post →</a>
 				
 			</nav>
-		</main>
+			<br/>
+			<br/>
+			<section id="comment">
+				<div id="comment-box"></div>
+				<!-- 
+				<script type="text/javascript">
+					var disqus_shortname = 'codepreneur';
+					
+					(function(){
+						var dsq = document.createElement('script');
+						dsq.type = 'text/javascript';
+						dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					}());
+				</script>
+				 -->
+
+			</section>
+
+
+		</article>
+	</main>
 
 
 
