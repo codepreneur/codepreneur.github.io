@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="utf-8" />
+    <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <title></title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="http://www.codepreneur.io">
+    <meta name="twitter:creator" content="@vmlifestyle">
+    <meta name="google-site-verification" content="">
+    <meta property="fb:admins" content="">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+
+    <link rel="shortcut icon" href="/img/codepreneur.png">
+    <link rel="stylesheet" href="/js/styles/obsidian.css">
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="/css/print.css" />
+    <link href="/css/commented.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    
+</head>
+<body class="">
+
+    <a href="/" class="logo-readium"><span class="logo" style="background-image: url(/img/readium-logo.png)"></span></a>
+    
+    
+
+
+
+<main class="content" role="main">
+    <article class="post">
+
+        
+
+<div class="article-image">
+    <div class="post-image-image" style="background-image: url(http://media-cache-ak0.pinimg.com/originals/18/b0/31/18b0310f64c74f6fa90710f41aeb47cb.jpg)">
+
+        Article Image
+
+    </div>
+    <div class="post-meta">
+        <h1 class="post-title">How To Set Up Octopress Blog</h1>
+        <div class="cf post-meta-text">
+            <div class="author-image" style="background-image: url(/img/codepreneur.png)">Blog Logo</div>
+            <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">codepreneur</h4> on
+            <time datetime="2014-11-09">09 Nov 2014</time>
+            , tagged on <a href="/tags/octopress/">octopress</a>, <a href="/tags/blogging/">blogging</a>, <a href="/tags/git/">git</a>, <a href="/tags/command-line/">command line</a>
+        </div>
+        <center><a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a></center>
+    </div>
+</div>
+
+<script src="/js/image-mover.js"></script>
+
+
+
+
+
+
+
+            <div class="post-reading">
+                <span class="post-reading-time"></span> read
+            </div>
+        <section class="post-content">
+            <a name="topofpage"></a>
+
+            <p>There is a reason why Octopress is called a blogging framework for hackers and that is because you have to love git and command line (it’s a good excuse to learn them!). You will be using these two a lot when building and growing your blog.</p>
+<p>What is also useful to know, is that Octopress is built on top of Jekyll (which by the way is the technology used for GitHub pages), so as you get more advanced you might learn that too. But let’s leave that for another blog post.</p>
+<a id="more"></a>
+
+<h2 id="Initial_set_up">Initial set up</h2>
+<p>First we need to clone octopress repository</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:imathis/octopress.git my-blog</div></pre></td></tr></table></figure>
+
+<p>This is where our blog will live and <code>my-blog</code> directory should now contain:</p>
+<img src="http://media-cache-ec0.pinimg.com/originals/a3/d6/c4/a3d6c4c05e081be943976c4617608e8b.jpg" title="git clone octopress" alt="git clone octopress">
+
+<p>Then we need to install all dependencies (this might take a while…)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ bundle install</div></pre></td></tr></table></figure>
+
+<p>if you got error message there, it means you dont have bundler installed so you need to install that too:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem install bundler</div></pre></td></tr></table></figure>
+
+<p>Next, we need to install the classic theme</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake install</div></pre></td></tr></table></figure>
+
+<p>By now, our <code>my-blog</code> directory should look like this:</p>
+<img src="http://media-cache-ec0.pinimg.com/originals/8b/97/aa/8b97aaf0c0db6e92d0ee721afdeab3f2.jpg" title="Classic theme installed" alt="Classic theme">
+
+<p>with 3 extra folders</p>
+<ul>
+<li><code>public/</code> where generated static site lives (also, this is the only folder that is being pushed to github as we will see later)</li>
+<li><code>sass/</code> where all the styling goes</li>
+<li><code>source/</code> where contents of <code>public/</code> are generated from</li>
+</ul>
+<p>Last step is to generate <code>public/</code> folder contents from <code>source/</code> and boot-up a server at port 4000</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake preview</div></pre></td></tr></table></figure>
+
+<p>So if you go to <code>http://localhost:4000</code> you should see your blog:</p>
+<img src="http://media-cache-ec0.pinimg.com/originals/df/70/8b/df708b4c47b537da7109e5f10d623196.jpg" title="Octopress blog is live" alt="Blog is live">
+
+
+<p>That’s it.</p>
+<h2 id="Configuring_your_blog">Configuring your blog</h2>
+<p>Configuring your blog is as simple as typing in</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim _config.yml</div></pre></td></tr></table></figure>
+
+<p>and changing contents of this file:</p>
+<img src="http://media-cache-ec0.pinimg.com/originals/55/2d/5f/552d5fcc0200c3d8c5097ace5bfc53a8.jpg" title="_config.yml" alt="Configuring your blog">
+
+
+
+<h2 id="Creating_content">Creating content</h2>
+<p>This is the time to brush up on your <a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="external">basic markdown</a> skills.</p>
+<p>If you want to create a new post</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake new_post[<span class="string">'My First Blog Post'</span>]</div></pre></td></tr></table></figure>
+
+<p>then <code>cd source/_posts/</code> and you should find freshly created markdown file there (if you want to know how to use it, click on the link above)</p>
+<p>if you want to create a new page</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake new_page[<span class="string">'Projects'</span>]</div></pre></td></tr></table></figure>
+
+<p>and then if you want to decide where it is going to exist on your blog you need to </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim <span class="built_in">source</span>/_includes/custom/navigation.html</div></pre></td></tr></table></figure>
+
+<p>If you want to create actual content for the page then </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vim <span class="built_in">source</span>/projects/index.markdown</div></pre></td></tr></table></figure>
+
+<p>Markdown is your friend when writing content for these pages.</p>
+<h2 id="Deploying/hosting_your_blog_on_github">Deploying/hosting your blog on github</h2>
+<p>First we need to create github repository for our blog, like this (replacing ‘username’ with your github username of course):</p>
+<img src="http://media-cache-ak0.pinimg.com/originals/45/15/5b/45155ba27fc06eaf18542db0c621b414.jpg" title="GitHub repository for blog" alt="Creating new github repository">
+
+
+<p>then</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake setup_github_pages</div></pre></td></tr></table></figure>
+
+<p>and copy paste the url that github gave you after you created repository.</p>
+<p>Everytime you create new posts/pages, change anything on your blog and want to push those changes to github</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake generate</div></pre></td></tr></table></figure>
+
+<p>to generate <code>public/</code> folder contents from <code>source/</code> and then</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rake deploy</div></pre></td></tr></table></figure>
+
+<p>to push everything to your newly created github repository.</p>
+<p>Now, if you go to <code>http://username.github.io</code> you should see your blog live !</p>
+
+        </section>
+
+        <footer class="post-footer"> 
+            <section class="share">
+    <a class="icon-twitter" href="http://twitter.com/share?text=How%20To%20Set%20Up%20Octopress%20Blog&url=http://www.codepreneur.io/2014/11/09/How-To-Set-Up-Octopress-Blog/"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codepreneur.io/2014/11/09/How-To-Set-Up-Octopress-Blog/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.codepreneur.io/2014/11/09/How-To-Set-Up-Octopress-Blog/"
+        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+
+        </footer>
+
+	<div
+		data-firebase="codepreneur"
+		data-auth="github google twitter facebook"
+		data-slug="How-To-Set-Up-Octopress-Blog"
+		data-inline=".post-content"
+		id="commented-main"></div>
+
+        <div class="bottom-teaser cf">
+    <a href="/about" class="silent-link">
+        <div class="isLeft">
+            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <section class="author">
+                <div class="author-image" style="background-image: url(/img/codepreneur.png)">Blog Logo</div>
+                <h4>codepreneur</h4>
+                <p class="bio">The difference between Java and JavaScript is similar to the difference between Ham and HamSter</p>
+                <hr>
+                <p class="published">
+                  Published <time datetime="2014-11-09">09 Nov 2014</time>
+                </p>
+            </section>
+        </div>
+    </a>
+    <div class="isRight">
+        <h5 class="index-headline featured"><span>Supported by</span></h5>
+        <footer class="site-footer">
+            <section class="poweredby">Proudly published with <a class="icon-hexo" href="http://hexo.io"> Hexo</a></section>
+            <a class="subscribe" href="/rss.xml"><span class="tooltip">You should subscribe to my RSS feed.</span></a>
+            <div class="inner">
+              <section class="copyright">
+                All content copyright <a href="/">Algoholic&#x27;s Blog</a> &copy; 2014<br>
+                All rights reserved.
+              </section>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+
+    </article>
+</main>
+
+<div class="bottom-closer">
+    <div class="background-closer-image" style="background-image: url(/img/vilnius.png)">
+        Image
+    </div>
+    <div class="inner">
+        <h1 class="blog-title">Algoholic&#x27;s Blog</h1>
+        <h2 class="blog-description">I live in the future and code what&#x27;s missing</h2>
+        <a href="/" class="btn">Back to Overview</a>
+    </div>
+</div>
+
+
+    
+    
+
+    
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script src="/js/readingTime.min.js"></script>
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script src="//cdn.firebase.com/v0/firebase.js"></script>
+    <script src="//cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.10.0/react-with-addons.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script> <!-- this is optional -->
+    <script src="/js/commented.min.js"></script>
+
+    
+    <script>
+        
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-51117505-1', 'www.codepreneur.io');
+      ga('send', 'pageview');
+    
+    </script>
+    
+
+</body>
+</html>
