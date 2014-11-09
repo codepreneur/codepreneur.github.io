@@ -55,15 +55,15 @@
 
 <div class="noarticleimage">
     <div class="post-meta">
-        <h1 class="post-title">Hello World</h1>
+        <h1 class="post-title">Intro to Monkey Patching</h1>
         <div class="cf post-meta-text">
             <a class="silent-link" href="/about">
                 <div class="author-image" style="background-image: url(/img/codepreneur.png)">Blog Logo</div>
                 <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">codepreneur</h4>
             </a>
             on
-            <time datetime="2014-11-01">01 Nov 2014</time>
-            
+            <time datetime="2014-11-09">09 Nov 2014</time>
+            , tagged on <a href="/tags/monkey-patching/">monkey patching</a>, <a href="/tags/ruby/">ruby</a>
         </div>
     </div>
 </div>
@@ -80,38 +80,41 @@
         <section class="post-content">
             <a name="topofpage"></a>
 
-            <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+            <p>Monkey patching have it’s legitimate uses, such as monkey patching float and fixnum to return money (currency jobs).</p>
+<p>Or… you could monkey patch fixnum to play FizzBuzz for you:</p>
+<figure class="highlight ruby"><figcaption><span>Fixnum</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></div><div class="line"> <span class="function"><span class="keyword">def</span> </span>divisible_by_three?</div><div class="line">  <span class="keyword">self</span> % <span class="number">3</span> == <span class="number">0</span></div><div class="line"> <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><figcaption><span>Testing</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span>.divisible_by_three? <span class="comment"># =&gt; true</span></div><div class="line"><span class="number">4</span>.divisible_by_three? <span class="comment"># =&gt; false</span></div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+
+<figure class="highlight ruby"><figcaption><span>More Fixnum</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fixnum</span></span></div><div class="line"> <span class="function"><span class="keyword">def</span> </span>fizzbuzz</div><div class="line">  <span class="keyword">return</span> “<span class="constant">Fizz</span>” <span class="keyword">if</span> divisible_by_three?</div><div class="line">  <span class="keyword">self</span></div><div class="line"> <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight ruby"><figcaption><span>More Testing</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span>.fizzbuzz <span class="comment"># =&gt; "Fizz"</span></div><div class="line"><span class="number">1</span>.fizzbuzz <span class="comment"># =&gt; 1</span></div></pre></td></tr></table></figure>
+
+<h1 id="Rewriting_Ruby_inject_method_by_monkey_patching_Array_class">Rewriting Ruby inject method by monkey patching Array class</h1>
+<p>This is my attempt at reimplementing Ruby’s Array.inject method:</p>
+<figure class="highlight ruby"><figcaption><span>Reinventing the wheel</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Array</span></span></div><div class="line"> <span class="comment"># block.call approach</span></div><div class="line"> <span class="function"><span class="keyword">def</span> </span>injectiano(accumulator = <span class="keyword">nil</span>,&block)</div><div class="line">  collection = <span class="keyword">self</span>.dup</div><div class="line"></div><div class="line">  accumulator ||= collection.shift</div><div class="line">  collection.each <span class="keyword">do</span> |item| </div><div class="line">   accumulator = block.call(accumulator,item)</div><div class="line">  <span class="keyword">end</span>	</div><div class="line">  accumulator</div><div class="line"> <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+
+<p>There you have it.</p>
 
         </section>
 
         <footer class="post-footer"> 
             <section class="share">
-    <a class="icon-twitter" href="http://twitter.com/share?text=Hello%20World&url=http://www.codepreneur.io/2014/11/01/hello-world/"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Intro%20to%20Monkey%20Patching&url=http://www.codepreneur.io/2014/11/09/Intro-to-Monkey-Patching/"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codepreneur.io/2014/11/01/hello-world/"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codepreneur.io/2014/11/09/Intro-to-Monkey-Patching/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.codepreneur.io/2014/11/01/hello-world/"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.codepreneur.io/2014/11/09/Intro-to-Monkey-Patching/"
         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
@@ -123,7 +126,7 @@
 	<div
 		data-firebase="codepreneur"
 		data-auth="github google twitter facebook"
-		data-slug="hello-world"
+		data-slug="Intro-to-Monkey-Patching"
 		data-inline=".post-content"
 		id="commented-main"></div>
 
@@ -137,7 +140,7 @@
                 <p class="bio">The difference between Java and JavaScript is similar to the difference between Ham and HamSter</p>
                 <hr>
                 <p class="published">
-                  Published <time datetime="2014-11-01">01 Nov 2014</time>
+                  Published <time datetime="2014-11-09">09 Nov 2014</time>
                 </p>
             </section>
         </div>
