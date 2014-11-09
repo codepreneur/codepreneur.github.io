@@ -53,22 +53,27 @@
 
         
 
-<div class="noarticleimage">
+<div class="article-image">
+    <div class="post-image-image" style="background-image: url(http://media-cache-ak0.pinimg.com/originals/0e/09/15/0e091544587fb2ca8f0a23e28fd55e14.jpg)">
+
+        Article Image
+
+    </div>
     <div class="post-meta">
-        <h1 class="post-title">Public Key Cryptography</h1>
+        <h1 class="post-title">Bitstreet</h1>
         <div class="cf post-meta-text">
-            <a class="silent-link" href="/about">
-                <div class="author-image" style="background-image: url(/img/codepreneur.png)">Blog Logo</div>
-                <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">codepreneur</h4>
-            </a>
-            on
-            <time datetime="2014-11-02">02 Nov 2014</time>
-            , tagged on <a href="/tags/cryptography/">cryptography</a>, <a href="/tags/encryption/">encryption</a>
+            <div class="author-image" style="background-image: url(/img/codepreneur.png)">Blog Logo</div>
+            <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">codepreneur</h4> on
+            <time datetime="2014-11-08">08 Nov 2014</time>
+            , tagged on <a href="/tags/bitcoin/">bitcoin</a>, <a href="/tags/cryptocurrency/">cryptocurrency</a>
         </div>
+        <center><a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a></center>
     </div>
 </div>
-<br>
-<br>
+
+<script src="/js/image-mover.js"></script>
+
+
 
 
 
@@ -80,38 +85,27 @@
         <section class="post-content">
             <a name="topofpage"></a>
 
-            <h1 id="How_Public_Key_Cryptography_works">How Public Key Cryptography works</h1>
-<p>The simplest possible example of cryptography would look something like this:</p>
-<p>if you have a string, lets say ‘apple’ and you are using 2 as a ‘key’ an encrypted string of ‘apple’ would look like this: ‘crrng’. That is, all letters are moved/shifted by 2 positions in the alphabet. Now, obviously real encryption is a lot more complex than that, but the principle itself is simple.</p>
-<p>Let’s say for a moment that you are a customer of Barclays and you are trying to login to your online banking interface. The whole process would be something like this:</p>
-<ol>
-<li><p>Barclays generates a set of two keys: public and private.<br>Public key is public. That is, everyone can see it.<br>Private key is never shared. Barclays is the only company that knows it.</p>
-</li>
-<li><p>Your browser requests the public key.</p>
-</li>
-<li>Your browser generates a random encryption key.</li>
-<li>Your browser encrypts all communication using this new encryption key.</li>
-<li>Your browser encrypts the encryption key (#3) itself with Barclays public key.</li>
-<li>And sends all of that to Barclays over an insecure network.</li>
-<li>Barclays uses its private key to decrypt the encryption key.</li>
-<li>Finally, Barclays uses that encryption key to decrypt the message.</li>
-</ol>
-<p>Private and public keys make up one key and can’t be generated at different times. I.e. they have to be generated together. And keys that are generated are symmetric, because that’s less computationally expensive.</p>
-<p>Symmetric means it can be used for both decryption and encryption.</p>
+            <img src="http://media-cache-ak0.pinimg.com/originals/0e/09/15/0e091544587fb2ca8f0a23e28fd55e14.jpg" title="Bitcoin ATM in Old Street station" alt="Bitcoin + Old Street = Bitstreet">
+
+<h1 id="Bitcoin_has_finally_come_to_Silicon_Roundabout!">Bitcoin has finally come to Silicon Roundabout!</h1>
+<p>About time.</p>
+<p>The first Bitcoin ATM that came to London was in Brixton if I remember correctly. Even though everyone (probably) expected it to come to Silicon Roundabout first. Ohh well. Better late than never!</p>
+<h2 id="Spot_the_irony!">Spot the irony!</h2>
+<p>Nevermind the irony of Silicon Roundabout (which is basically a synonym for words like new/ground-breaking and innovation) being at the station called ‘Old Street’. The fact that one of the very early adopters of bitcoin ATMs/cryptocurrency are here is either a coincidence or very carefully planned satire.</p>
 
         </section>
 
         <footer class="post-footer"> 
             <section class="share">
-    <a class="icon-twitter" href="http://twitter.com/share?text=Public%20Key%20Cryptography&url=http://www.codepreneur.io/2014/11/02/Public-Key-Cryptography/"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Bitstreet&url=http://www.codepreneur.io/2014/11/08/Bitstreet/"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codepreneur.io/2014/11/02/Public-Key-Cryptography/"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codepreneur.io/2014/11/08/Bitstreet/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.codepreneur.io/2014/11/02/Public-Key-Cryptography/"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.codepreneur.io/2014/11/08/Bitstreet/"
         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
@@ -123,7 +117,7 @@
 	<div
 		data-firebase="codepreneur"
 		data-auth="github google twitter facebook"
-		data-slug="Public-Key-Cryptography"
+		data-slug="Bitstreet"
 		data-inline=".post-content"
 		id="commented-main"></div>
 
@@ -137,7 +131,7 @@
                 <p class="bio">The difference between Java and JavaScript is similar to the difference between Ham and HamSter</p>
                 <hr>
                 <p class="published">
-                  Published <time datetime="2014-11-02">02 Nov 2014</time>
+                  Published <time datetime="2014-11-08">08 Nov 2014</time>
                 </p>
             </section>
         </div>
