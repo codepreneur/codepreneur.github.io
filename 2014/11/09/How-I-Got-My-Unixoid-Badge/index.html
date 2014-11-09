@@ -55,15 +55,15 @@
 
 <div class="noarticleimage">
     <div class="post-meta">
-        <h1 class="post-title">Public Key Cryptography</h1>
+        <h1 class="post-title">How I Got My Unixoid Badge</h1>
         <div class="cf post-meta-text">
             <a class="silent-link" href="/about">
                 <div class="author-image" style="background-image: url(/img/codepreneur.png)">Blog Logo</div>
                 <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">codepreneur</h4>
             </a>
             on
-            <time datetime="2014-11-02">02 Nov 2014</time>
-            , tagged on <a href="/tags/cryptography/">cryptography</a>, <a href="/tags/encryption/">encryption</a>
+            <time datetime="2014-11-09">09 Nov 2014</time>
+            , tagged on <a href="/tags/command-line/">command line</a>, <a href="/tags/unix/">unix</a>, <a href="/tags/shell/">shell</a>
         </div>
     </div>
 </div>
@@ -80,39 +80,40 @@
         <section class="post-content">
             <a name="topofpage"></a>
 
-            <p>The simplest possible example of cryptography would look something like this:</p>
-<p>if you have a string, lets say ‘apple’ and you are using 2 as a ‘key’ an encrypted string of ‘apple’ would look like this: ‘crrng’. That is, all letters are moved/shifted by 2 positions in the alphabet. Now, obviously real encryption is a lot more complex than that, but the principle itself is simple.</p>
-<a id="more"></a>
+            <div class="video-container"><iframe src="//www.youtube.com/embed/XBMWS9B4Y1I" frameborder="0" allowfullscreen></iframe></div>
 
-<p>Let’s say for a moment that you are a customer of Barclays and you are trying to login to your online banking interface. The whole process would be something like this:</p>
-<ol>
-<li><p>Barclays generates a set of two keys: public and private.<br>Public key is public. That is, everyone can see it.<br>Private key is never shared. Barclays is the only company that knows it.</p>
-</li>
-<li><p>Your browser requests the public key.</p>
-</li>
-<li>Your browser generates a random encryption key.</li>
-<li>Your browser encrypts all communication using this new encryption key.</li>
-<li>Your browser encrypts the encryption key (#3) itself with Barclays public key.</li>
-<li>And sends all of that to Barclays over an insecure network.</li>
-<li>Barclays uses its private key to decrypt the encryption key.</li>
-<li>Finally, Barclays uses that encryption key to decrypt the message.</li>
-</ol>
-<p>Private and public keys make up one key and can’t be generated at different times. I.e. they have to be generated together. And keys that are generated are symmetric, because that’s less computationally expensive.</p>
-<p>Symmetric means it can be used for both decryption and encryption.</p>
+<p>This is what is happening in the video in this exact order:</p>
+<ul>
+<li>Change into the temporary directory</li>
+<li>Using one command, create a directory structure “my/private/files” </li>
+<li>Using one command, create a directory structure “my/public/files”</li>
+<li>Create an empty file ‘t-vars.env’ in my/private/files</li>
+<li>Using command-line only add the line “List of env vars that begin with T” to the file, make sure it ends with a newline</li>
+<li>List all env variables that begin with “T” (hint: you’ll need a regex that includes the marker of the start of the line) and append them to the end of the file</li>
+<li>Export a new variable TESTING_MAKERS=working in such a way that it is still available when you open a new shell</li>
+<li>Open a new terminal window, check that a new variable is available</li>
+<li>Output the count of the variables that begin with T to a new file my/public/files/t-vars.count, e.g. “Overall count: 5” (hint: you’ll need to use ‘command substitution’ in bash)</li>
+<li>Change the permissions of the my/private/files/t-vars.env to make sure that only the owner can read and write the file</li>
+<li>Change the permissions of the my/private/files directory to make sure that only the owner can change into it</li>
+<li>Give read and write permissions to all users on my/public/files/t-vars.count</li>
+<li>Create another file my/public/files/text-files-count.txt and output the number of text files in your home directory (recursively)  into that file</li>
+<li>List all env variables sorted alphabetically and show the top 3 lines</li>
+</ul>
+<p>The goal is to turn RSpec green.</p>
 
         </section>
 
         <footer class="post-footer"> 
             <section class="share">
-    <a class="icon-twitter" href="http://twitter.com/share?text=Public%20Key%20Cryptography&url=http://www.codepreneur.io/2014/11/02/Public-Key-Cryptography/"
+    <a class="icon-twitter" href="http://twitter.com/share?text=How%20I%20Got%20My%20Unixoid%20Badge&url=http://www.codepreneur.io/2014/11/09/How-I-Got-My-Unixoid-Badge/"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codepreneur.io/2014/11/02/Public-Key-Cryptography/"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.codepreneur.io/2014/11/09/How-I-Got-My-Unixoid-Badge/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.codepreneur.io/2014/11/02/Public-Key-Cryptography/"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.codepreneur.io/2014/11/09/How-I-Got-My-Unixoid-Badge/"
         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
@@ -124,7 +125,7 @@
 	<div
 		data-firebase="codepreneur"
 		data-auth="github google twitter facebook"
-		data-slug="Public-Key-Cryptography"
+		data-slug="How-I-Got-My-Unixoid-Badge"
 		data-inline=".post-content"
 		id="commented-main"></div>
 
@@ -138,7 +139,7 @@
                 <p class="bio">The difference between Java and JavaScript is similar to the difference between Ham and HamSter</p>
                 <hr>
                 <p class="published">
-                  Published <time datetime="2014-11-02">02 Nov 2014</time>
+                  Published <time datetime="2014-11-09">09 Nov 2014</time>
                 </p>
             </section>
         </div>
