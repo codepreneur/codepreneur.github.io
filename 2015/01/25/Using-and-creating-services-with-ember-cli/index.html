@@ -81,6 +81,8 @@
             <a name="topofpage"></a>
 
             <p>This feature is only available from Ember 1.10.0-beta.4 onwards.</p>
+<a id="more"></a>
+
 <p>Some examples when services could be used are:</p>
 <ul>
 <li>Interfacing with a geolocation API</li>
@@ -102,10 +104,10 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">player: Ember.inject.service(<span class="string">'player'</span>)</div></pre></td></tr></table></figure>
 
 <p> Services can then be used in the templates like so:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\{\{audio-control isPlaying=player.isPlaying\}\}</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;audio-control isPlaying=player.isPlaying&gt;</div></pre></td></tr></table></figure>
 
 <p> or with helpers:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\{\{format-duration player.currentTime\}\}</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;format-duration player.currentTime&gt;</div></pre></td></tr></table></figure>
 
 <p>Services are only instantiated once. This means that there is instance of the service that is never destroyed as long as your application is running.</p>
 
