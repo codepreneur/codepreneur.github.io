@@ -91,6 +91,10 @@
 <p>To create a player service type <code>ember generate service player</code> or create a file manually:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app/</div><div class="line">  services/</div><div class="line">    player.js</div></pre></td></tr></table></figure>
 
+<p>Services are automatically detected and registered by placing them in the services directory.</p>
+<p>To implement a service, just export a subclass of <code>Ember.Service</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">import Ember from <span class="string">'ember'</span>;</div><div class="line">export <span class="keyword">default</span> Ember.Service.extend({</div><div class="line">    currentTime: <span class="number">1</span>,</div><div class="line">    isPlaying: <span class="literal">false</span>,</div><div class="line">    play: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Playing...'</span>);</div><div class="line">    }</div><div class="line">});</div></pre></td></tr></table></figure>
+
 
         </section>
 
