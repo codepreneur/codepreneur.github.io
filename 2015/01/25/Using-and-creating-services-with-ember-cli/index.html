@@ -103,11 +103,11 @@
 <p>The name passed into the service function is not required if property name matches the service name, so it is often omitted and not written like this:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">player: Ember.inject.service(<span class="string">'player'</span>)</div></pre></td></tr></table></figure>
 
-<p> Services can then be used in the templates like so:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;audio-control isPlaying=player.isPlaying&gt;</div></pre></td></tr></table></figure>
+<p> Services can then be used in the templates like so (replace <code>&lt; &gt;</code> with double curly braces:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio-control</span> <span class="attribute">isPlaying</span>=<span class="value">player.isPlaying</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <p> or with helpers:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;format-duration player.currentTime&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">format</span>-duration player.<span class="keyword">currentTime</span>&gt;</div></pre></td></tr></table></figure>
 
 <p>Services are only instantiated once. This means that there is instance of the service that is never destroyed as long as your application is running.</p>
 
