@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codepreneur.io/2015/01/25/Using-and-creating-services-with-ember-cli/</loc>
+    <lastmod>2015-01-25T13:33:40.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.codepreneur.io/2014/11/11/Evolution-of-Web-Apps/</loc>
     <lastmod>2015-01-23T17:32:51.000Z</lastmod>
   </url>
