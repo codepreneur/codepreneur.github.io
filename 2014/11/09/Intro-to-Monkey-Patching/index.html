@@ -102,7 +102,7 @@
 <p>This is my attempt at reimplementing Ruby’s Array.inject method:</p>
 <figure class="highlight ruby"><figcaption><span>Reinventing the wheel</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Array</span></span></div><div class="line"> <span class="comment"># block.call approach</span></div><div class="line"> <span class="function"><span class="keyword">def</span> </span>injectiano(accumulator = <span class="keyword">nil</span>,&block)</div><div class="line">  collection = <span class="keyword">self</span>.dup</div><div class="line"></div><div class="line">  accumulator ||= collection.shift</div><div class="line">  collection.each <span class="keyword">do</span> |item| </div><div class="line">   accumulator = block.call(accumulator,item)</div><div class="line">  <span class="keyword">end</span>	</div><div class="line">  accumulator</div><div class="line"> <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
-<p>There you have it.</p>
+<p>There you have it. With great power comes great responsibility.</p>
 
         </section>
 
