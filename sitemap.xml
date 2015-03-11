@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codepreneur.io/2015/01/25/Using-and-creating-services-with-ember-cli/</loc>
+    <lastmod>2015-03-11T23:00:58.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.codepreneur.io/2014/11/09/How-I-Got-My-Unixoid-Badge/</loc>
-    <lastmod>2015-03-10T23:53:56.000Z</lastmod>
+    <lastmod>2015-03-11T23:00:48.000Z</lastmod>
   </url>
   
   <url>
@@ -29,11 +34,6 @@
   <url>
     <loc>http://www.codepreneur.io/2014/11/09/Intro-to-Monkey-Patching/</loc>
     <lastmod>2015-02-26T23:36:38.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.codepreneur.io/2015/01/25/Using-and-creating-services-with-ember-cli/</loc>
-    <lastmod>2015-02-14T23:31:09.000Z</lastmod>
   </url>
   
   <url>
