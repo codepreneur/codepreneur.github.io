@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codepreneur.io/2014/11/09/Intro-to-Monkey-Patching/</loc>
+    <lastmod>2015-03-19T22:39:06.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://www.codepreneur.io/2015/03/17/What-expenses-you-can-claim-as-a-freelancer/</loc>
     <lastmod>2015-03-17T20:12:18.000Z</lastmod>
   </url>
@@ -34,11 +39,6 @@
   <url>
     <loc>http://www.codepreneur.io/2014/11/09/How-To-Set-Up-Octopress-Blog/</loc>
     <lastmod>2015-02-27T21:56:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.codepreneur.io/2014/11/09/Intro-to-Monkey-Patching/</loc>
-    <lastmod>2015-02-26T23:36:38.000Z</lastmod>
   </url>
   
   <url>
